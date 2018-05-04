@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Mar 17 18:17:52 CST 2018
+druid-1.1.6.jar>nexus-aliyun=
+druid-1.1.6.pom>nexus-aliyun=
