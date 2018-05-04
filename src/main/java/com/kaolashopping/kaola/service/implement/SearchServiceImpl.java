@@ -1,11 +1,16 @@
 package com.kaolashopping.kaola.service.implement;
 
+import com.alibaba.fastjson.JSON;
 import com.kaolashopping.kaola.bean.Car;
 import com.kaolashopping.kaola.bean.EvaluateIdNode;
+import com.kaolashopping.kaola.bean.HotCar;
+import com.kaolashopping.kaola.bean.User;
+import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.mapper.SearchMapper;
 import com.kaolashopping.kaola.service.ProductsService;
 import com.kaolashopping.kaola.service.SearchService;
 import com.kaolashopping.kaola.utils.CommonUtils;
+import com.kaolashopping.kaola.utils.LocalUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanMap;
 import org.springframework.scheduling.annotation.Async;
@@ -23,6 +28,9 @@ public class SearchServiceImpl implements SearchService {
 
     @Autowired
     private ProductsService productsService;
+
+    @Autowired
+    private CarMapper carMapper;
 
     /**
      * 登录用户条件搜索
@@ -92,8 +100,10 @@ public class SearchServiceImpl implements SearchService {
         // 合并结果集
         List<Car> res = new ArrayList<>(resSimTypeCars.size() + resDiffTypeCars.size() +
                 priceUnfitQueueForSim.size() + priceUnfitQueueForDiff.size());
+        List<Car> updateData = new ArrayList<>(resSimTypeCars.size() + resDiffTypeCars.size());
         for (EvaluateIdNode evaluateIdNode : resSimTypeCars) {
             res.add(map.get(evaluateIdNode.getId()));
+            updateData.add(map.get(evaluateIdNode.getId()));
         }
         for (EvaluateIdNode evaluateIdNode : resDiffTypeCars) {
             res.add(map.get(evaluateIdNode.getId()));
@@ -106,6 +116,7 @@ public class SearchServiceImpl implements SearchService {
         }
 
         // 异步更新用户个性化推荐
+        updateUserRecommand(updateData, LocalUser.getUser());
 
         return res;
     }
@@ -113,11 +124,40 @@ public class SearchServiceImpl implements SearchService {
     /**
      * 更新用户的个性化推荐
      *
-     * @param carData
+     * @param cars
      */
     @Async
-    public void updateUserRecomman(List<Car> carData) {
-        
+    public void updateUserRecommand(List<Car> cars, User user) {
+        Map<Integer, Integer> idCount = new HashMap<>();
+        Map<String, Integer> brandCount = new HashMap<>();
+        Map<Integer, String> tmpIdAndBrand = new HashMap<>();
+        for (Car car : cars) {
+            String simIds = car.getEvaluate();
+            String[] ids = simIds.split(" ");
+            for (String id : ids) {
+                int carId = Integer.parseInt(id);
+                idCount.put(carId, idCount.containsKey(carId) ? idCount.get(carId) + 1 : 1);
+                String brand;
+                if (tmpIdAndBrand.containsKey(car.getParentId())) {
+                    brand = tmpIdAndBrand.get(car.getParentId());
+                } else {
+                    Car parentCar = carMapper.getCarById(car.getParentId());
+                    brand = parentCar.getBrand();
+                    tmpIdAndBrand.put(parentCar.getId(), brand);
+                }
+                brandCount.put(brand, brandCount.containsKey(brand) ? brandCount.get(brand) + 1 : 1);
+            }
+        }
+        HotCar hotCar = searchMapper.getHotCarByUser(user.getId());
+        if (hotCar == null) {
+            hotCar = new HotCar(user.getId(), JSON.toJSONString(idCount), JSON.toJSONString(brandCount));
+        } else {
+            String carContent = hotCar.getCarContent();
+            String brandContent = hotCar.getBrandContent();
+            if (carContent != null) {
+
+            }
+        }
     }
 
     /**
