@@ -471,7 +471,7 @@
     <#if simCars??>
         <div class="eachHomepageCategoryProducts">
             <div class="eachHomepageCategoryProducts">
-                <div class="left-mark"></div>
+                <div class="left-mark">筛选结果</div>
                 <#--<span class="categoryTitle"></span>-->
                 <br>
                 <#list simCars as car>

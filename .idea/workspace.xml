@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b1a5ac8-62c7-4d24-b8f1-29c68355894b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/BrandBrowsingHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/CarBrowsingHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/OveragePremiumRateOfCarUsingKM.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,27 +19,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java">
+      <file leaf-file-name="ProductsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
+            <state relative-caret-position="372">
+              <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonalizedRecommendationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6891#6892#0" expanded="true" />
-                <element signature="e#6918#6919#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java">
+      <file leaf-file-name="PersonalizedRecommendationServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="407">
+              <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+              <folding>
+                <element signature="e#8508#8509#0" expanded="true" />
+                <element signature="e#8557#8558#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5235#5236#0" expanded="true" />
+                <element signature="e#5282#5283#0" expanded="true" />
+                <element signature="e#5394#5395#0" expanded="true" />
+                <element signature="e#5439#5440#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -267,15 +311,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="kaola" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaolashoppping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaolashoppping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kaola" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -425,7 +460,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228741000" />
+    <option name="totallyTimeSpent" value="229552000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -438,6 +473,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.23904383" />
@@ -449,28 +485,54 @@
       <window_info id="Structure" order="4" sideWeight="0.5013089" side_tool="true" weight="0.24040511" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info id="UI Designer" order="0" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.35550708" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.30970556" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49946696" weight="0.32897604" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.29225737" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3293348" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.28731343" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.2704471" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" visible="true" weight="0.20610687" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4986911" visible="true" weight="0.21588486" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" weight="0.35877863" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.4986911" visible="true" weight="0.21588486" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info id="Favorites" order="6" sideWeight="0.5013089" side_tool="true" weight="0.24040511" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.29225737" />
       <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.29225737" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.28731343" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.23904383" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4986911" visible="true" weight="0.21588486" />
+      <window_info id="Favorites" order="6" sideWeight="0.5013089" side_tool="true" weight="0.24040511" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info id="Structure" order="4" sideWeight="0.5013089" side_tool="true" weight="0.24040511" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3297568" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="10" weight="0.2704471" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49946696" weight="0.32897604" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info id="UI Designer" order="0" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.329602" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.35550708" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" visible="true" weight="0.20610687" />
+      <window_info anchor="right" id="Commander" order="3" weight="0.4" />
+      <window_info id="Designer" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,20 +547,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index/foreproduct.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="216" column="56" lean-forward="true" selection-start-line="216" selection-start-column="56" selection-end-line="216" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://G:/maven-repository/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/regex/Matcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -668,22 +716,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3971">
-          <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+        <state relative-caret-position="407">
+          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+          <folding>
+            <element signature="e#8508#8509#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="426">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+        <state relative-caret-position="372">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -707,15 +762,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
+        <state relative-caret-position="192">
           <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="122" column="35" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
+        <state relative-caret-position="251">
+          <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5235#5236#0" expanded="true" />
+            <element signature="e#5282#5283#0" expanded="true" />
+            <element signature="e#5394#5395#0" expanded="true" />
+            <element signature="e#5439#5440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -887,14 +952,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/OveragePremiumRateOfCarUsingKM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/CarEquipment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="487">
+          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6891#6892#0" expanded="true" />
-            <element signature="e#6918#6919#0" expanded="true" />
           </folding>
         </state>
       </provider>

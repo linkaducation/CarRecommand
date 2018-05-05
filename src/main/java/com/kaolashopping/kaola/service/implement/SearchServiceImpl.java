@@ -51,7 +51,6 @@ public class SearchServiceImpl implements SearchService {
         return resMap.get("res");
     }
 
-
     /**
      * 游客用户条件搜索
      *
@@ -305,5 +304,4 @@ public class SearchServiceImpl implements SearchService {
         }
         return resQueue;
     }
-
 }
