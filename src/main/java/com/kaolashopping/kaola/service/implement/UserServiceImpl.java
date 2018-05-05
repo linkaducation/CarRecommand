@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.kaolashopping.kaola.bean.*;
 import com.kaolashopping.kaola.mapper.PersonallizMapper;
 import com.kaolashopping.kaola.mapper.UserMapper;
+import com.kaolashopping.kaola.redis.RedisUtils;
 import com.kaolashopping.kaola.service.UserService;
 import com.kaolashopping.kaola.utils.CommonUtils;
 import com.kaolashopping.kaola.utils.LocalUser;
@@ -26,6 +27,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private PersonallizMapper personallizMapper;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     /**
      * 通过用户id获取user
@@ -71,6 +75,14 @@ public class UserServiceImpl implements UserService {
         }
         userMapper.addUser(user);
         return true;
+    }
+
+    /**
+     * 用户下线
+     */
+    @Override
+    public void logout(String uid) {
+        redisUtils.remove(uid);
     }
 
     /**

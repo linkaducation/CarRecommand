@@ -54,6 +54,7 @@ public class CarSearchController {
         }
         ModelAndView mav = new ModelAndView("search");
         mav.addObject("simCars", simCars);
+        mav.addObject("user", LocalUser.getUser());
         return mav;
     }
 

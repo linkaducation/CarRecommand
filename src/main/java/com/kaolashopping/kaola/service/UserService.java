@@ -32,4 +32,6 @@ public interface UserService {
     List<Car> getMostViewCars();
 
     List<String> getMostViewBrands();
+
+    void logout(String uid);
 }

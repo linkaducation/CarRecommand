@@ -21,7 +21,11 @@ public class HomepageIntercepter implements HandlerInterceptor {
         if (user != null) {
             return true;
         }
-        response.sendRedirect("/homepage");
+        String uri = request.getRequestURI();
+        if (!uri.contains("login") && !uri.contains("register")) {
+            response.sendRedirect("/homepage");
+            return false;
+        }
         return true;
     }
 

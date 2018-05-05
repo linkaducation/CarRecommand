@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
+import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -148,26 +149,39 @@ public class UserController {
         return "true";
     }
 
+    @GetMapping("/user/logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response) {
+        userService.logout(CookieUtils.getUserCookieByRequest(request));
+        if (LocalUser.getUser() != null) {
+            try {
+                response.sendRedirect("/");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @GetMapping("/user/center")
     public ModelAndView personalCenter() {
-        // car浏览记录
+        // car的最近浏览记录
         List<Car> latestCars = userService.getLatestCar();
 
         // 浏览最多的car
         List<Car> mostViewCars = userService.getMostViewCars();
 
-        // brand浏览历史
+        // brand的最近浏览历史
         List<String> brands = userService.getLatestBrands();
 
         // 浏览最多的品牌
         List<String> mostViewsBrand = userService.getMostViewBrands();
 
-        // 性格分析
+        // 获取我最在意的优点和我最不在乎的缺点
         Map<String, List<String>> features = userService.getPersonFeatures();
 
-        // 我最在意的点
+        // 获取个人最在意的车辆的三个特征
         List<String> characters = userService.getChracters();
 
-        return null;
+        ModelAndView mav = new ModelAndView("userCenter");
+        return mav;
     }
 }
