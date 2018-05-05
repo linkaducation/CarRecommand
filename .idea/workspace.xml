@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b1a5ac8-62c7-4d24-b8f1-29c68355894b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/BrandBrowsingHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/CarBrowsingHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/PersonallizMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/PersonallizMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index/car.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index/car.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index/homepage.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index/homepage.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index/search.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index/search.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,27 +28,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java">
+      <file leaf-file-name="ProductsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
+            <state relative-caret-position="372">
+              <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonalizedRecommendationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6891#6892#0" expanded="true" />
-                <element signature="e#6918#6919#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java">
+      <file leaf-file-name="PersonalizedRecommendationServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="1332">
+              <caret line="235" selection-start-line="235" selection-end-line="235" />
+              <folding>
+                <element signature="e#8508#8509#0" expanded="true" />
+                <element signature="e#8557#8558#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5235#5236#0" expanded="true" />
+                <element signature="e#5282#5283#0" expanded="true" />
+                <element signature="e#5394#5395#0" expanded="true" />
+                <element signature="e#5439#5440#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,23 +97,16 @@
       <list>
         <option value="Kotlin File" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>考拉海购</find>
-      <find>考拉</find>
-      <find>JSON.pars</find>
-      <find>basicConfigs</find>
-      <find>首页</find>
-      <find>&lt;/span&gt;</find>
       <find>json.parse</find>
       <find>totalScore1</find>
-      <find>map</find>
       <find>getTes</find>
       <find>gethome</find>
       <find>homepageca</find>
@@ -94,6 +128,13 @@
       <find>getCarsByParentId</find>
       <find>微型车</find>
       <find>test</find>
+      <find>brandCount</find>
+      <find>carType</find>
+      <find>LocalUser</find>
+      <find>user</find>
+      <find>update</find>
+      <find>map</find>
+      <find>touristKey</find>
     </findStrings>
     <replaceStrings>
       <replace>网易</replace>
@@ -111,9 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/CarEquipment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/OrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/style2.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/style.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index/car.html" />
@@ -124,7 +162,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/CarModelService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/CarModelController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index/staticIndex.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index/car.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index/foreproduct.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/configurer/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/Car.java" />
@@ -136,32 +173,36 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserBrand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserCar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/TouristUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/PersonallizMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/intercepter/IgnorePageInterceptier.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/CookieUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/BrandPopularityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/SearchModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/CarSearch.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index/homepage.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/InitConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/intercepter/PersonalFeatureIntercepter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/CarModelServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/EvaluateIdNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/SearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/CarSearchController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/CarBrowsingHistory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/BrandBrowsingHistory.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index/search.ftl.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/CarSearchController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/InitConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/SearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/intercepter/PersonalFeatureIntercepter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index/search.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index/car.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCarForBrowsing.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/PersonallizMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index/homepage.ftl" />
       </list>
     </option>
   </component>
@@ -267,7 +308,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="kaola" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="intercepter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kaolashoppping" type="b2602c69:ProjectViewProjectNode" />
@@ -277,6 +318,40 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="kaola" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaolashoppping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaolashoppping" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kaola" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="implement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaolashoppping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaolashoppping" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaolashoppping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaolashoppping" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaolashoppping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaolashoppping" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,7 +369,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="controll&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;cookieuti&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/utils/CookieUtils.java&#10;productsService&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java&#10;product&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;car&#9;PSI&#9;JAVA://com.kaolashopping.kaola.bean.Car&#10;productcon&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;carmode&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/CarModelService.java&#10;produccon&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;produ&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/ProductsService.java&#10;produc&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java&#10;brandpop&#9;PSI&#9;JAVA://com.kaolashopping.kaola.mapper.BrandPopularityMapper&#10;carmodelc&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/CarModelController.java&#10;foreproduct&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/resources/templates/index/foreproduct.ftl&#10;style&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/resources/static/style.css&#10;login&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/resources/templates/index/login.ftl&#10;user&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/User.java&#10;usercontro&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/UserController.java&#10;ordermapp&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/mapper/OrderMapper.java&#10;orderse&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/OrderServiceImpl.java&#10;carmapp&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java&#10;carmap&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/mapper/CartMapper.java&#10;orderservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/OrderServiceImpl.java&#10;orderview&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/OrderViewObject.java&#10;order&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/Order.java&#10;cartser&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;productservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java&#10;carservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;cartservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;ordercontr&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/OrderController.java&#10;ordercont&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/OrderController.java&#10;ordercontro&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/OrderController.java&#10;cartservice&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;cart&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/Cart.java&#10;cartcontr&#9;PSI&#9;JAVA://com.kaolashopping.kaola.controller.CartController&#10;cartcon&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/CartController.java" />
+    <property name="SearchEverywhereHistoryKey" value="productcon&#9;FILE&#9;file://H:/毕业设计相关/项目/kaolashoppping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;carmapp&#9;FILE&#9;file://H:/毕业设计相关/项目/kaolashoppping/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java&#10;src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java&#9;FILE&#9;file://H:/毕业设计相关/项目/kaolashoppping/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java&#10;productcontroll&#9;FILE&#9;file://H:/毕业设计相关/项目/kaolashoppping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;hotcar&#9;FILE&#9;file://H:/毕业设计相关/项目/kaolashoppping/src/main/java/com/kaolashopping/kaola/bean/HotCar.java&#10;.idea/workspace.xml&#9;FILE&#9;file://H:/毕业设计相关/项目/kaolashoppping/.idea/workspace.xml&#10;controll&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;cookieuti&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/utils/CookieUtils.java&#10;productsService&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java&#10;product&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;car&#9;PSI&#9;JAVA://com.kaolashopping.kaola.bean.Car&#10;carmode&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/CarModelService.java&#10;produccon&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java&#10;produ&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/ProductsService.java&#10;produc&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java&#10;brandpop&#9;PSI&#9;JAVA://com.kaolashopping.kaola.mapper.BrandPopularityMapper&#10;carmodelc&#9;FILE&#9;file://H:/毕业设计相关/打包备份/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/CarModelController.java&#10;foreproduct&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/resources/templates/index/foreproduct.ftl&#10;style&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/resources/static/style.css&#10;login&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/resources/templates/index/login.ftl&#10;user&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/User.java&#10;usercontro&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/UserController.java&#10;ordermapp&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/mapper/OrderMapper.java&#10;orderse&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/OrderServiceImpl.java&#10;carmap&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/mapper/CartMapper.java&#10;orderservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/OrderServiceImpl.java&#10;orderview&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/OrderViewObject.java&#10;order&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/Order.java&#10;cartser&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;productservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java&#10;carservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;cartservi&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;ordercontr&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/OrderController.java&#10;ordercont&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/OrderController.java&#10;ordercontro&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/OrderController.java&#10;cartservice&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/service/implement/CartServiceImpl.java&#10;cart&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/bean/Cart.java&#10;cartcontr&#9;PSI&#9;JAVA://com.kaolashopping.kaola.controller.CartController&#10;cartcon&#9;FILE&#9;file:///Users/ming.zhong/IdeaProjects/kaolashopping/src/main/java/com/kaolashopping/kaola/controller/CartController.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -420,12 +495,12 @@
       <workItem from="1524654799824" duration="2723000" />
       <workItem from="1524731011804" duration="70974000" />
       <workItem from="1525412891717" duration="6551000" />
-      <workItem from="1525421641851" duration="5146000" />
+      <workItem from="1525421641851" duration="22329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228741000" />
+    <option name="totallyTimeSpent" value="245924000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -449,16 +524,17 @@
       <window_info id="Structure" order="4" sideWeight="0.5013089" side_tool="true" weight="0.24040511" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info id="UI Designer" order="0" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.35550708" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.31515813" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49946696" weight="0.32897604" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.29225737" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3293348" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.28731343" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.2704471" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" visible="true" weight="0.20610687" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" visible="true" weight="0.39367503" />
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4986911" visible="true" weight="0.21588486" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="7" side_tool="true" />
@@ -467,7 +543,6 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.29225737" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.329602" />
@@ -476,50 +551,41 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="232" />
+      <option name="time" value="269" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index/foreproduct.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="216" column="56" lean-forward="true" selection-start-line="216" selection-start-column="56" selection-end-line="216" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://G:/maven-repository/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/regex/Matcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="533" column="18" selection-start-line="533" selection-start-column="18" selection-end-line="533" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/CarModelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/redis/RedisUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/KaolaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -541,22 +607,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserCars.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserCar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserBrand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -575,13 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://G:/maven-repository/org/springframework/spring-aop/4.3.14.RELEASE/spring-aop-4.3.14.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
         </state>
       </provider>
     </entry>
@@ -635,23 +680,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/SearchModel.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index/homepage.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="451" column="57" selection-start-line="451" selection-start-column="55" selection-end-line="451" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/InitConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -666,34 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3971">
-          <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/intercepter/PersonalFeatureIntercepter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/EvaluateIdNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -702,27 +702,6 @@
             <element signature="e#386#387#0" expanded="true" />
             <element signature="e#417#418#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="122" column="35" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/CarModelServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="124" column="13" selection-start-line="119" selection-start-column="78" selection-end-line="124" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -740,41 +719,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/CarSearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/SearchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/BrandPopularityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1228">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -785,13 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/PersonallizMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -799,102 +740,239 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCar.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12060" />
+      </provider>
+    </entry>
+    <entry file="jar://G:/maven-repository/org/springframework/spring-aop/4.3.14.RELEASE/spring-aop-4.3.14.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/InitConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/CarSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/utils/LocalUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#688#689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/SearchService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/intercepter/PersonalFeatureIntercepter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
           <folding>
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#4259#4260#0" expanded="true" />
+            <element signature="e#4319#4320#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/BrandBrowsingHistory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
-          <folding>
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#900#901#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/CarBrowsingHistory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/CarModelServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="117" column="29" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index/car.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1786">
+          <caret line="461" column="14" selection-start-line="461" selection-start-column="14" selection-end-line="461" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index/search.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="467" column="14" lean-forward="true" selection-start-line="391" selection-start-column="8" selection-end-line="467" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/UserCar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/bean/HotCarForBrowsing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/SearchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="359">
+          <caret line="119" column="48" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6891#6892#0" expanded="true" />
-            <element signature="e#6918#6919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/PersonallizMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/CarMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/mapper/SearchMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index/homepage.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="473" column="48" selection-start-line="473" selection-start-column="48" selection-end-line="473" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/controller/ProductsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/PersonalizedRecommendationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/ProductsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5235#5236#0" expanded="true" />
+            <element signature="e#5282#5283#0" expanded="true" />
+            <element signature="e#5394#5395#0" expanded="true" />
+            <element signature="e#5439#5440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/ProductsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kaolashopping/kaola/service/implement/PersonalizedRecommendationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="235" selection-start-line="235" selection-end-line="235" />
+          <folding>
+            <element signature="e#8508#8509#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
           </folding>
         </state>
       </provider>

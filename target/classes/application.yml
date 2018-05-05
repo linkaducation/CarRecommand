@@ -1,0 +1,61 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/kaola?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  freemarker:
+    template-loader-path: classpath:/templates/index/
+
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6380
+    password:
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+
+mybatis:
+  type-aliases-package: org.allenming.carrecommend.bean
+  configuration:
+    use-generated-keys: true
+
+personal:
+  checkLoginKey: login
+  cookieName: uid
+  touristCookieName: touristuid
+  userCacheTime: 180
+  needLoginController: homepage
+  loginUrl: /user/login
+  verifyCodeCacheTime: 5
+  homePageUrl: /homepage
+  pageNum: 10
+  HomePageCarKeys: home_page_car_keys
+
+
+
+
