@@ -84,10 +84,6 @@ public class SearchServiceImpl implements SearchService {
         String carType = CommonUtils.carType.get(type);
 
         Map<Integer, Car> allCars = productsService.getAllCars();
-        HashMap<Integer, Car> map = new HashMap<>(allCars.size());
-        for (Car car : allCars.values()) {
-            map.put(car.getId(), car);
-        }
         Map<String, Float> tarMap = new HashMap<>(searchCondition.size());
         for (String s : searchCondition.keySet()) {
             tarMap.put(s, Float.parseFloat(searchCondition.get(s)));
@@ -103,7 +99,7 @@ public class SearchServiceImpl implements SearchService {
         PriorityQueue<EvaluateIdNode> simTypeCars = new PriorityQueue<>(comparator);
         PriorityQueue<EvaluateIdNode> difSimTypeCars = new PriorityQueue<>(comparator);
 
-        for (Car car : map.values()) {
+        for (Car car : allCars.values()) {
             Map<String, Float> carMap = JSON.parseObject(car.getEvaluate(), new TypeReference<Map<String, Float>>() {
             });
             float pearsonCoefficient = CommonUtils.getPearsonCoefficient(tarMap, carMap);
@@ -116,9 +112,9 @@ public class SearchServiceImpl implements SearchService {
 
         // 过滤掉价格不合适的汽车
         PriorityQueue<EvaluateIdNode> priceUnfitQueueForSim = getQueue(minPrice, maxPrice, simTypeCars,
-                map, comparator);
+                allCars, comparator);
         PriorityQueue<EvaluateIdNode> priceUnfitQueueForDiff = getQueue(minPrice, maxPrice, difSimTypeCars,
-                map, comparator);
+                allCars, comparator);
 
         // 最多只保留20辆车
         PriorityQueue<EvaluateIdNode> resSimTypeCars = removeExtraCar(priceUnfitQueueForSim, comparator);
@@ -129,27 +125,27 @@ public class SearchServiceImpl implements SearchService {
                 priceUnfitQueueForSim.size() + priceUnfitQueueForDiff.size());
         List<Car> updateData = new ArrayList<>(resSimTypeCars.size() + resDiffTypeCars.size());
         for (EvaluateIdNode evaluateIdNode : resSimTypeCars) {
-            res.add(map.get(evaluateIdNode.getId()));
-            updateData.add(map.get(evaluateIdNode.getId()));
+            res.add(allCars.get(evaluateIdNode.getId()));
+            updateData.add(allCars.get(evaluateIdNode.getId()));
         }
         String type1 = searchCondition.get("type");
         for (EvaluateIdNode evaluateIdNode : resDiffTypeCars) {
             if (res.size() >= 50 || "11".equals(type1) || "12".equals(type1) || "13".equals(type1)) {
                 break;
             }
-            res.add(map.get(evaluateIdNode.getId()));
+            res.add(allCars.get(evaluateIdNode.getId()));
         }
         for (EvaluateIdNode evaluateIdNode : priceUnfitQueueForSim) {
             if (res.size() >= 50 || "11".equals(type1) || "12".equals(type1) || "13".equals(type1)) {
                 break;
             }
-            res.add(map.get(evaluateIdNode.getId()));
+            res.add(allCars.get(evaluateIdNode.getId()));
         }
         for (EvaluateIdNode evaluateIdNode : priceUnfitQueueForDiff) {
             if (res.size() >= 50 || "11".equals(type1) || "12".equals(type1) || "13".equals(type1)) {
                 break;
             }
-            res.add(map.get(evaluateIdNode.getId()));
+            res.add(allCars.get(evaluateIdNode.getId()));
         }
         Map<String, List<Car>> result = new HashMap<>(2);
         result.put("res", res);
@@ -248,7 +244,7 @@ public class SearchServiceImpl implements SearchService {
                 list.sort(Comparator.comparing(Map.Entry::getValue));
                 Collections.reverse(list);
                 int i = 0;
-                Map<Integer, Integer> res = new HashMap<>(list.size());
+                Map<Integer, Integer> res = new LinkedHashMap<>(list.size());
                 for (Map.Entry<Integer, Integer> entry : list) {
                     i++;
                     res.put(entry.getKey(), entry.getValue());
@@ -276,7 +272,7 @@ public class SearchServiceImpl implements SearchService {
                 list.sort(Comparator.comparing(Map.Entry::getValue));
                 Collections.reverse(list);
                 int i = 0;
-                Map<String, Integer> res = new HashMap<>(list.size());
+                Map<String, Integer> res = new LinkedHashMap<>(list.size());
                 for (Map.Entry<String, Integer> entry : list) {
                     i++;
                     res.put(entry.getKey(), entry.getValue());

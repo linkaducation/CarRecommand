@@ -4,6 +4,8 @@ package com.kaolashopping.kaola.mapper;
 import com.kaolashopping.kaola.bean.*;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface PersonallizMapper {
 
@@ -38,4 +40,16 @@ public interface PersonallizMapper {
     @Insert("insert into carBrowsingHistory (`userId`, `carId`, `browsingDate`) " +
             "values (#{userId}, #{carId}, #{browsingDate})")
     void saveCarBrowsingHistory(CarBrowsingHistory cbh);
+
+    @Select("select * from userCar where userId = #{userId} and type = #{type}")
+    List<UserCar> getAllUserCar(int userId, String type);
+
+    @Select("select * from hotCarForBrowsing where userId = #{userId} and type = #{type}")
+    HotCarForBrowsing getHotCarForBrowsing(int userId, String type);
+
+    @Insert("insert into HotCarForBrowsing (`userId`, `type`, `content`) values (#{userId}, #{type}, #{content})")
+    void saveHotCarForBrowsing(HotCarForBrowsing hotCarForBrowsing);
+
+    @Update("update hotCarForBrowsing set content = #{content} where userId = #{userId} and type = #{type}")
+    void updateHotCarForBrowsing(HotCarForBrowsing hotCarForBrowsing);
 }

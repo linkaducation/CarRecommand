@@ -6,6 +6,7 @@ import com.kaolashopping.kaola.bean.*;
 import com.kaolashopping.kaola.mapper.BrandPopularityMapper;
 import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.mapper.PersonallizMapper;
+import com.kaolashopping.kaola.mapper.SearchMapper;
 import com.kaolashopping.kaola.service.PersonalizedRecommendationService;
 import com.kaolashopping.kaola.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
 
     @Autowired
     private BrandPopularityMapper brandPopularityMapper;
+
+    @Autowired
+    private SearchMapper searchMapper;
 
     /**
      * 非登录用户更新个性化推荐
@@ -136,7 +140,26 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
             userCar.setContent(JSON.toJSONString(content));
             personallizMapper.updateUserCar(userCar);
         }
-        // TODO 更新所有的汽车热度
+
+        HotCarForBrowsing hcfb = personallizMapper.getHotCarForBrowsing(userId, type);
+        Map<Integer, Integer> content = new HashMap<>(1);
+        content.put(carId, 1);
+        if (hcfb == null) {
+            hcfb = new HotCarForBrowsing(userId, type, JSON.toJSONString(content));
+            personallizMapper.saveHotCarForBrowsing(hcfb);
+        } else {
+            String contentStr = hcfb.getContent();
+            if (contentStr == null) {
+                hcfb.setContent(JSON.toJSONString(content));
+            } else {
+                LinkedHashMap<Integer, Integer> contentMap = JSON.parseObject(contentStr, new TypeReference<LinkedHashMap<Integer, Integer>>() {
+                });
+                contentMap.put(carId, contentMap.containsKey(carId) ? contentMap.get(carId) + 1 : 1);
+                hcfb.setContent(JSON.toJSONString(contentMap));
+            }
+            personallizMapper.updateHotCarForBrowsing(hcfb);
+        }
+
     }
 
     /**
@@ -232,6 +255,41 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
             return getCarsByBrand(touristUser.getId(), "tourist", brand);
         }
         return null;
+    }
+
+    /**
+     * 根据用户获取主页登陆的热门汽车
+     * 1.用户搜索结果hotCar集合
+     * 2.用户浏览记录的hotCar集
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public List<Car> getHotCars(User user) {
+        Map<Integer, Car> allCars = productsService.getAllCars();
+        HotCar hotCar = searchMapper.getHotCarByUser(user.getId());
+        List<Car> res = new ArrayList<>(10);
+        String carContent = hotCar.getCarContent();
+        LinkedHashMap<Integer, Integer> idCount = JSON.parseObject(carContent,
+                new TypeReference<LinkedHashMap<Integer, Integer>>() {
+                });
+        int i = 0;
+        for (Integer carId : idCount.keySet()) {
+            Car car = allCars.get(carId);
+            if (car != null) {
+                res.add(car);
+                i++;
+            }
+            if (i >= 10) {
+                break;
+            }
+        }
+
+        List<UserCar> userCars = personallizMapper.getAllUserCar(user.getId(), "user");
+
+
+        return res;
     }
 
     /**
