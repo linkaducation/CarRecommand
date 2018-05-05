@@ -36,8 +36,11 @@ public class CarSearchController {
     public ModelAndView SearchCars(@RequestParam Map<String, String> searchCondition,
                                    HttpServletRequest request, HttpServletResponse response) {
         User user = LocalUser.getUser();
-        List<Car> simCars;
+        List<Car> simCars = null;
         String touristCookie = CookieUtils.getTouristCookie(request);
+        if (searchCondition.get("type").equals("选择")) {
+            searchCondition.put("type", "14");
+        }
         if (user != null) {
             simCars = searchService.getSimCars(searchCondition);
         } else if (touristCookie != null && redisUtils.get(touristCookie) != null) {
@@ -49,7 +52,9 @@ public class CarSearchController {
                 e.printStackTrace();
             }
         }
-        return null;
+        ModelAndView mav = new ModelAndView("search");
+        mav.addObject("simCars", simCars);
+        return mav;
     }
 
 }

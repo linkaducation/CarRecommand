@@ -6,6 +6,7 @@ import com.kaolashopping.kaola.bean.*;
 import com.kaolashopping.kaola.mapper.BrandPopularityMapper;
 import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.mapper.PersonallizMapper;
+import com.kaolashopping.kaola.mapper.SearchMapper;
 import com.kaolashopping.kaola.service.PersonalizedRecommendationService;
 import com.kaolashopping.kaola.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
 
     @Autowired
     private BrandPopularityMapper brandPopularityMapper;
+
+    @Autowired
+    private SearchMapper searchMapper;
 
     /**
      * 非登录用户更新个性化推荐
@@ -69,6 +73,11 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
     private void executeBrandUpdate(String type, int userId, String brand) {
         UserBrand userBrand = personallizMapper.getUserBrand(userId, type);
         Car car = carMapper.getCarsByBrandNew(brand);
+
+        // 插入品牌浏览记录
+        BrandBrowsingHistory bbh = new BrandBrowsingHistory(userId, car.getId(), brand, new Date());
+        personallizMapper.saveBrandBrowsingHistory(bbh);
+
         if (userBrand == null) {
             Map<Integer, Integer> content = new HashMap<>();
             content.put(car.getId(), 1);
@@ -91,7 +100,6 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
             userBrand.setContent(JSON.toJSONString(content));
             personallizMapper.updateUserBrand(userBrand);
         }
-        // TODO 更新该品牌的热度
 
     }
 
@@ -105,6 +113,10 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
     private void executeUserCarsUpdate(String type, int userId, int carId) {
         Car parentCar = carMapper.getParentByChildId(carId);
         executeBrandUpdate(type, userId, parentCar.getBrand());
+        // 插入汽车浏览记录
+        CarBrowsingHistory cbh = new CarBrowsingHistory(userId, carId, new Date());
+        personallizMapper.saveCarBrowsingHistory(cbh);
+
         UserCar userCar = personallizMapper.getUserCar(userId, type, parentCar.getId());
         if (userCar == null) {
             Map<Integer, Integer> content = new HashMap<>();
@@ -128,7 +140,26 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
             userCar.setContent(JSON.toJSONString(content));
             personallizMapper.updateUserCar(userCar);
         }
-        // TODO 更新所有的汽车热度
+
+        HotCarForBrowsing hcfb = personallizMapper.getHotCarForBrowsing(userId, type);
+        Map<Integer, Integer> content = new HashMap<>(1);
+        content.put(carId, 1);
+        if (hcfb == null) {
+            hcfb = new HotCarForBrowsing(userId, type, JSON.toJSONString(content));
+            personallizMapper.saveHotCarForBrowsing(hcfb);
+        } else {
+            String contentStr = hcfb.getContent();
+            if (contentStr == null) {
+                hcfb.setContent(JSON.toJSONString(content));
+            } else {
+                LinkedHashMap<Integer, Integer> contentMap = JSON.parseObject(contentStr, new TypeReference<LinkedHashMap<Integer, Integer>>() {
+                });
+                contentMap.put(carId, contentMap.containsKey(carId) ? contentMap.get(carId) + 1 : 1);
+                hcfb.setContent(JSON.toJSONString(contentMap));
+            }
+            personallizMapper.updateHotCarForBrowsing(hcfb);
+        }
+
     }
 
     /**
@@ -224,6 +255,86 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
             return getCarsByBrand(touristUser.getId(), "tourist", brand);
         }
         return null;
+    }
+
+    /**
+     * 根据用户获取主页登陆的热门汽车
+     * 1.用户搜索结果hotCar集合
+     * 2.用户浏览记录的hotCar集
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public List<Car> getHotCars(User user) {
+        return doGetHotCars(user.getId());
+    }
+
+    /**
+     * 根据用户获取主页登陆的热门汽车
+     * 1.用户搜索结果hotCar集合
+     * 2.用户浏览记录的hotCar集
+     *
+     * @param touristKey
+     * @return
+     */
+    @Override
+    public List<Car> getHotCars(String touristKey) {
+        TouristUser touristUser = personallizMapper.getTouristUserByTouristKey(touristKey);
+        if (touristUser == null) {
+            personallizMapper.addTouristUser(new TouristUser(touristKey));
+            touristUser = personallizMapper.getTouristUserByTouristKey(touristKey);
+        }
+
+        return doGetHotCars(touristUser.getId());
+    }
+
+    /**
+     * 真正的执行获取热门车辆的方法
+     *
+     * @param userId
+     * @return
+     */
+    private List<Car> doGetHotCars(int userId) {
+        Map<Integer, Car> allCars = productsService.getAllCars();
+        HotCar hotCar = searchMapper.getHotCarByUser(userId);
+        List<Car> res = new ArrayList<>(10);
+        if (hotCar != null) {
+            String carContent = hotCar.getCarContent();
+            LinkedHashMap<Integer, Integer> idCount = JSON.parseObject(carContent,
+                    new TypeReference<LinkedHashMap<Integer, Integer>>() {
+                    });
+            getTop10HotCar(idCount, res, allCars);
+        }
+        HotCarForBrowsing hotCarForBrowsing = personallizMapper.getHotCarForBrowsing(userId, "user");
+        if (hotCarForBrowsing != null) {
+            String content = hotCarForBrowsing.getContent();
+            LinkedHashMap<Integer, Integer> map = JSON.parseObject(content, new TypeReference<LinkedHashMap<Integer, Integer>>() {
+            });
+            getTop10HotCar(map, res, allCars);
+        }
+        return res;
+    }
+
+    /**
+     * 获取热度top10的车
+     *
+     * @param map
+     * @param res
+     * @param allCars
+     */
+    private void getTop10HotCar(Map<Integer, Integer> map, List<Car> res, Map<Integer, Car> allCars) {
+        int i = 0;
+        for (Integer carId : map.keySet()) {
+            Car car = allCars.get(carId);
+            if (car != null) {
+                res.add(car);
+                i++;
+            }
+            if (i >= 10) {
+                break;
+            }
+        }
     }
 
     /**

@@ -1,10 +1,10 @@
 package com.kaolashopping.kaola.mapper;
 
 
-import com.kaolashopping.kaola.bean.TouristUser;
-import com.kaolashopping.kaola.bean.UserBrand;
-import com.kaolashopping.kaola.bean.UserCar;
+import com.kaolashopping.kaola.bean.*;
 import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface PersonallizMapper {
@@ -32,4 +32,24 @@ public interface PersonallizMapper {
 
     @Insert("insert into touristUser (`touristKey`) values (#{touristKey})")
     void addTouristUser(TouristUser touristUser);
+
+    @Insert("insert into brandBrowsingHistory (`userId`, `brandId`, `brand`, `browsingDate`) " +
+            "values (#{userId}, #{brandId}, #{brand}, #{browsingDate})")
+    void saveBrandBrowsingHistory(BrandBrowsingHistory bbh);
+
+    @Insert("insert into carBrowsingHistory (`userId`, `carId`, `browsingDate`) " +
+            "values (#{userId}, #{carId}, #{browsingDate})")
+    void saveCarBrowsingHistory(CarBrowsingHistory cbh);
+
+    @Select("select * from userCar where userId = #{userId} and type = #{type}")
+    List<UserCar> getAllUserCar(@Param("userId") int userId, @Param("type") String type);
+
+    @Select("select * from hotCarForBrowsing where userId = #{userId} and type = #{type}")
+    HotCarForBrowsing getHotCarForBrowsing(@Param("userId") int userId, @Param("type") String type);
+
+    @Insert("insert into hotCarForBrowsing (`userId`, `type`, `content`) values (#{userId}, #{type}, #{content})")
+    void saveHotCarForBrowsing(HotCarForBrowsing hotCarForBrowsing);
+
+    @Update("update hotCarForBrowsing set content = #{content} where userId = #{userId} and type = #{type}")
+    void updateHotCarForBrowsing(HotCarForBrowsing hotCarForBrowsing);
 }

@@ -39,5 +39,6 @@ public class InitConfig implements CommandLineRunner {
         CommonUtils.carType.put(11, "面包车");
         CommonUtils.carType.put(12, "MPV");
         CommonUtils.carType.put(13, "跑车");
+        CommonUtils.carType.put(14, null);
     }
 }

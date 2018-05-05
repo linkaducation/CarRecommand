@@ -383,7 +383,83 @@
             </dl>
         </div>
 
-        <br> <br> <br><br> <br> <br><br> <br> <br><br>
+        <br> <br> <br> <br> <br> <br> <br>
+
+        <div class="eachHomepageCategoryProducts">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                按条件查询
+            </button>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                请输入条件
+                                <span style="font-size: 10px">（默认为无要求）</span>
+                            </h4>
+                        </div>
+                        <form action="/search" method="post">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">油耗：</span>
+                                <input class="form-control" style="width:100px" name="fuelConsumption" type="range" min="0.0" max="5.0" value="0">
+                                <span class="input-group-addon">操控：</span>
+                                <input class="form-control" style="width:100px" name="control" type="range" min="0.0" max="5.0" value="0">
+                                <span class="input-group-addon">动力：</span>
+                                <input class="form-control" style="width:100px" name="power" type="range" min="0.0" max="5.0" value="0">
+                            </div>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">配置：</span>
+                                <input class="form-control" style="width:100px" name="configure" type="range" min="0.0" max="5.0" value="0">
+                                <span class="input-group-addon">舒适：</span>
+                                <input class="form-control" style="width:100px" name="comfortable" type="range" min="0.0" max="5.0" value="0">
+                                <span class="input-group-addon">空间：</span>
+                                <input class="form-control" style="width:100px" name="space" type="range" min="0.0" max="5.0" value="0">
+                            </div>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">外观：</span>
+                                <input class="form-control" style="width:100px" name="appearance" type="range" min="0.0" max="5.0" value="0">
+                                <span class="input-group-addon">内饰：</span>
+                                <input class="form-control" style="width:100px" name="interior" type="range" min="0.0" max="5.0" value="0">
+                                <span class="input-group-addon">性价比：</span>
+                                <input class="form-control" style="width:83px" name="costPerformance" type="range" min="0.0" max="5.0" value="0">
+                            </div>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">定位：</span>
+                                <select class="form-control" style="width:100px" name="type">
+                                    <option>选择</option>
+                                    <option value="0">微型车</option>
+                                    <option value="1">紧凑型车</option>
+                                    <option value="2">小型车</option>
+                                    <option value="3">中型车</option>
+                                    <option value="4">中大型车</option>
+                                    <option value="5">大型车</option>
+                                    <option value="6">紧凑型SUV</option>
+                                    <option value="7">小型SUV</option>
+                                    <option value="8">中型SUV</option>
+                                    <option value="9">中大型SUV</option>
+                                    <option value="10">大型SUV</option>
+                                    <option value="11">面包车</option>
+                                    <option value="12">MPV</option>
+                                    <option value="13">跑车</option>
+                                </select>
+                                <span class="input-group-addon">最低价：</span>
+                                <input class="form-control" style="width:83px" name="minPrice" type="number" value="0">
+                                <span class="input-group-addon">最高价：</span>
+                                <input class="form-control" style="width:83px" name="maxPrice" type="number" value="0">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                </button>
+                                <input type="submit" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
 
         <#--小标题，分类-->
             <div class="eachHomepageCategoryProducts">

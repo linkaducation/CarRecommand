@@ -49,14 +49,21 @@ public class ProductsController {
         ModelAndView mav = new ModelAndView("homepage");
         User user = LocalUser.getUser();
         LinkedHashMap<String, List<Car>> cars;
+        List<Car> hotCars = null;
         String touristCookie = CookieUtils.getTouristCookie(request);
         if (user != null) {
+            hotCars = prService.getHotCars(user);
             cars = prService.getHomePageCarsByUser(user);
         } else if (touristCookie != null && redisUtils.get(touristCookie) != null){
             cars = prService.getHomePageCarsByTourist(redisUtils.get(touristCookie));
+            hotCars = prService.getHotCars(redisUtils.get(touristCookie));
         } else {
             cars = productsService.getHomePageCars();
         }
+        if (hotCars == null || hotCars.isEmpty()) {
+            hotCars = productsService.getHotCars();
+        }
+        mav.addObject("hotCars", hotCars);
         mav.addObject("user", user);
         mav.addObject("cars", cars);
         return mav;

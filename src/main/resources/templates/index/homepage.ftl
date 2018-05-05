@@ -389,7 +389,7 @@
             </dl>
         </div>
 
-        <br> <br> <br> <br> <br> <br>
+        <br> <br> <br> <br> <br> <br> <br>
 
         <div class="eachHomepageCategoryProducts">
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -464,6 +464,30 @@
                         </form>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal -->
+            </div>
+        </div>
+
+        <#--热门车辆展示-->
+        <div class="eachHomepageCategoryProducts">
+            <div class="eachHomepageCategoryProducts">
+                <div class="left-mark"></div>
+                <span class="categoryTitle">热门汽车</span>
+                <br>
+                <#list hotCars as car>
+                <#--核心div，展示商品-->
+                    <div class="productItem">
+                        <a href="detail/foreproduct/${car.id}"><img width="100px" src="${car.picturePath}"></a>
+                        <a class="productItemDescLink" href="detail/foreproduct/${car.id}">
+                                <span class="productItemDesc">
+                                    ${car.brand}
+                                </span>
+                        </a>
+                        <span class="productPrice">
+                                ${car.minPrice}-${car.maxPrice}
+                            </span>
+                    </div>
+                </#list>
+                <div style="clear:both"></div>
             </div>
         </div>
 
