@@ -1,11 +1,14 @@
 package com.kaolashopping.kaola.intercepter;
 
 import com.kaolashopping.kaola.bean.Car;
+import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.redis.RedisUtils;
 import com.kaolashopping.kaola.service.PersonalizedRecommendationService;
 import com.kaolashopping.kaola.service.ProductsService;
+import com.kaolashopping.kaola.service.SearchService;
 import com.kaolashopping.kaola.utils.CookieUtils;
 import com.kaolashopping.kaola.utils.LocalUser;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
@@ -15,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,6 +35,9 @@ public class PersonalFeatureIntercepter implements HandlerInterceptor {
 
     @Autowired
     private PersonalizedRecommendationService perRecommentService;
+
+    @Autowired
+    private SearchService searchService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
@@ -62,6 +70,15 @@ public class PersonalFeatureIntercepter implements HandlerInterceptor {
 
                 if (car != null) {
                     updateBrandPopularity(car.getBrand());
+                }
+
+                String referer = request.getHeader("Referer");
+                if (referer != null && referer.contains("search")) {
+                    List<Car> cars = new ArrayList<>(1);
+                    cars.add(productsService.getCarById(id));
+                    if (LocalUser.getUser() != null) {
+                        searchService.updateUserRecommand(cars, LocalUser.getUser().getId());
+                    }
                 }
             }
         } else if (requestURI.contains("brand")) {

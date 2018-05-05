@@ -3,13 +3,10 @@ package com.kaolashopping.kaola.service.implement;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.kaolashopping.kaola.bean.Car;
-import com.kaolashopping.kaola.bean.User;
 import com.kaolashopping.kaola.mapper.BrandPopularityMapper;
 import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.redis.RedisUtils;
 import com.kaolashopping.kaola.service.ProductsService;
-import com.kaolashopping.kaola.utils.LocalUser;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -198,6 +195,17 @@ public class ProductsServiceImpl implements ProductsService {
     @Override
     public Car getParentCarByChildId(int childId) {
         return carMapper.getParentByChildId(childId);
+    }
+
+    /**
+     * 根据id获取car
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Car getCarById(int id) {
+        return carMapper.getCarById(id);
     }
 
 }

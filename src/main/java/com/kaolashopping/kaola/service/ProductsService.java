@@ -44,4 +44,6 @@ public interface ProductsService {
 
     Car getParentCarByChildId(int childId);
 
+    Car getCarById(int id);
+
 }
