@@ -28,4 +28,6 @@ public interface PersonalizedRecommendationService {
     List<Car> getCarsByBrandWithTourist(String touristKey, String brand);
 
     List<Car> getHotCars(User user);
+
+    List<Car> getHotCars(String touristKey);
 }

@@ -46,4 +46,5 @@ public interface ProductsService {
 
     Car getCarById(int id);
 
+    List<Car> getHotCars();
 }

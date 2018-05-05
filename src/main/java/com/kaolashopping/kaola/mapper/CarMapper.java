@@ -84,4 +84,8 @@ public interface CarMapper {
 
     @Select("select c2.* from car c1 inner join car c2 on c1.parentId = c2.id where c1.id = #{id}")
     Car getParentByChildId(@Param("id") int id);
+
+    @Select("select * from car where evaluate is not null and onSale = 1 and parentId is not null " +
+            "and isChild = 0 order by popularity desc limit 20")
+    List<Car> getHotCars();
 }

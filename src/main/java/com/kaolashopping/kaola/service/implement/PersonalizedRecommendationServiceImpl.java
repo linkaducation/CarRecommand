@@ -267,15 +267,65 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
      */
     @Override
     public List<Car> getHotCars(User user) {
+        return doGetHotCars(user.getId());
+    }
+
+    /**
+     * 根据用户获取主页登陆的热门汽车
+     * 1.用户搜索结果hotCar集合
+     * 2.用户浏览记录的hotCar集
+     *
+     * @param touristKey
+     * @return
+     */
+    @Override
+    public List<Car> getHotCars(String touristKey) {
+        TouristUser touristUser = personallizMapper.getTouristUserByTouristKey(touristKey);
+        if (touristUser == null) {
+            personallizMapper.addTouristUser(new TouristUser(touristKey));
+            touristUser = personallizMapper.getTouristUserByTouristKey(touristKey);
+        }
+
+        return doGetHotCars(touristUser.getId());
+    }
+
+    /**
+     * 真正的执行获取热门车辆的方法
+     *
+     * @param userId
+     * @return
+     */
+    private List<Car> doGetHotCars(int userId) {
         Map<Integer, Car> allCars = productsService.getAllCars();
-        HotCar hotCar = searchMapper.getHotCarByUser(user.getId());
+        HotCar hotCar = searchMapper.getHotCarByUser(userId);
         List<Car> res = new ArrayList<>(10);
-        String carContent = hotCar.getCarContent();
-        LinkedHashMap<Integer, Integer> idCount = JSON.parseObject(carContent,
-                new TypeReference<LinkedHashMap<Integer, Integer>>() {
-                });
+        if (hotCar != null) {
+            String carContent = hotCar.getCarContent();
+            LinkedHashMap<Integer, Integer> idCount = JSON.parseObject(carContent,
+                    new TypeReference<LinkedHashMap<Integer, Integer>>() {
+                    });
+            getTop10HotCar(idCount, res, allCars);
+        }
+        HotCarForBrowsing hotCarForBrowsing = personallizMapper.getHotCarForBrowsing(userId, "user");
+        if (hotCarForBrowsing != null) {
+            String content = hotCarForBrowsing.getContent();
+            LinkedHashMap<Integer, Integer> map = JSON.parseObject(content, new TypeReference<LinkedHashMap<Integer, Integer>>() {
+            });
+            getTop10HotCar(map, res, allCars);
+        }
+        return res;
+    }
+
+    /**
+     * 获取热度top10的车
+     *
+     * @param map
+     * @param res
+     * @param allCars
+     */
+    private void getTop10HotCar(Map<Integer, Integer> map, List<Car> res, Map<Integer, Car> allCars) {
         int i = 0;
-        for (Integer carId : idCount.keySet()) {
+        for (Integer carId : map.keySet()) {
             Car car = allCars.get(carId);
             if (car != null) {
                 res.add(car);
@@ -285,11 +335,6 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
                 break;
             }
         }
-
-        List<UserCar> userCars = personallizMapper.getAllUserCar(user.getId(), "user");
-
-
-        return res;
     }
 
     /**

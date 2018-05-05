@@ -389,7 +389,7 @@
             </dl>
         </div>
 
-        <br> <br> <br> <br> <br> <br>
+        <br> <br> <br> <br> <br> <br> <br>
 
         <div class="eachHomepageCategoryProducts">
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">

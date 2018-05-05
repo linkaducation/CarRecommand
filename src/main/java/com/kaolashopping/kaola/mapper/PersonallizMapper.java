@@ -42,12 +42,12 @@ public interface PersonallizMapper {
     void saveCarBrowsingHistory(CarBrowsingHistory cbh);
 
     @Select("select * from userCar where userId = #{userId} and type = #{type}")
-    List<UserCar> getAllUserCar(int userId, String type);
+    List<UserCar> getAllUserCar(@Param("userId") int userId, @Param("type") String type);
 
     @Select("select * from hotCarForBrowsing where userId = #{userId} and type = #{type}")
-    HotCarForBrowsing getHotCarForBrowsing(int userId, String type);
+    HotCarForBrowsing getHotCarForBrowsing(@Param("userId") int userId, @Param("type") String type);
 
-    @Insert("insert into HotCarForBrowsing (`userId`, `type`, `content`) values (#{userId}, #{type}, #{content})")
+    @Insert("insert into hotCarForBrowsing (`userId`, `type`, `content`) values (#{userId}, #{type}, #{content})")
     void saveHotCarForBrowsing(HotCarForBrowsing hotCarForBrowsing);
 
     @Update("update hotCarForBrowsing set content = #{content} where userId = #{userId} and type = #{type}")

@@ -208,4 +208,14 @@ public class ProductsServiceImpl implements ProductsService {
         return carMapper.getCarById(id);
     }
 
+    /**
+     * 获取主页默认显示的热门车辆集合
+     *
+     * @return
+     */
+    @Override
+    public List<Car> getHotCars() {
+        return carMapper.getHotCars();
+    }
+
 }
