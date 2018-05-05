@@ -61,13 +61,10 @@ function checkEmpty(id, name){
         <span>喵，欢迎来车库</span>
         <a href="login">请登录</a>
         <a href="register">免费注册</a>
-        <span class="pull-right">
-			<a href="/account/order">我的订单</a>
-                            <a href="/account/cart">
-			购物车<strong>0</strong>件</a>
-		</span>
     </div>
 </nav>
+
+<title>登陆</title>
 
 <script>
 $(function(){
@@ -130,7 +127,6 @@ $(function(){
 			
 			
 			<div>
-				<a class="notImplementLink" href="">忘记登录密码</a>
 				<a href="register" class="pull-right">免费注册</a>
 			</div>
 			<div style="margin-top:20px">

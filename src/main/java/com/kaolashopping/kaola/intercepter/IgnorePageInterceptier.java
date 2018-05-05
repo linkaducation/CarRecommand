@@ -57,7 +57,7 @@ public class IgnorePageInterceptier implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object o, ModelAndView modelAndView) throws Exception {
-
+        LocalUser.removeUser();
     }
 
     @Override

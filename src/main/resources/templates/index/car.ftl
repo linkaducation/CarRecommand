@@ -15,6 +15,10 @@
         </a>
     <#if user??>
         <span>${user.nickName}，欢迎来到Allen的车库</span>
+        <span class="pull-right">
+			<a href="/user/center">个人中心</a>
+            <a href="/user/logout">退出登录</a>
+		</span>
     <#else >
         <span>喵，欢迎来到Allen的车库</span>
         <a href="/user/login">请登录</a>
@@ -24,7 +28,7 @@
     </div>
 </nav>
 
-<title>所有汽车</title>
+<title>汽车</title>
 
 <div class="homepageDiv">
     <div class="homepageCategoryProducts">

@@ -10,7 +10,6 @@ import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.mapper.CarModelMapper;
 import com.kaolashopping.kaola.redis.RedisUtils;
 import com.kaolashopping.kaola.service.CarModelService;
-import com.kaolashopping.kaola.service.ProductsService;
 import com.kaolashopping.kaola.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,9 +31,6 @@ public class CarModelServiceImpl implements CarModelService {
 
     @Autowired
     private CarMapper carMapper;
-
-    @Autowired
-    private ProductsService productsService;
 
     private static String CARMODELKEY = "CAR_MODEL_INFO_KEY";
 
@@ -115,7 +111,7 @@ public class CarModelServiceImpl implements CarModelService {
     @Override
     public boolean initPear() {
 
-        Map<Integer, Car> map = productsService.getAllCars();
+        Map<Integer, Car> map = CommonUtils.allCars;
         for (Car car : map.values()) {
             PriorityQueue<EvaluateIdNode> priorityQueue = new PriorityQueue<>((o1, o2) -> {
                 if (o1.getSimRatio() == o2.getSimRatio()) {
