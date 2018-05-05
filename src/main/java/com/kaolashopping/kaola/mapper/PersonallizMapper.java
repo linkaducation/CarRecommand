@@ -1,9 +1,7 @@
 package com.kaolashopping.kaola.mapper;
 
 
-import com.kaolashopping.kaola.bean.TouristUser;
-import com.kaolashopping.kaola.bean.UserBrand;
-import com.kaolashopping.kaola.bean.UserCar;
+import com.kaolashopping.kaola.bean.*;
 import org.apache.ibatis.annotations.*;
 
 @Mapper
@@ -32,4 +30,12 @@ public interface PersonallizMapper {
 
     @Insert("insert into touristUser (`touristKey`) values (#{touristKey})")
     void addTouristUser(TouristUser touristUser);
+
+    @Insert("insert into brandBrowsingHistory (`userId`, `brandId`, `brand`, `browsingDate`) " +
+            "values (#{userId}, #{brandId}, #{brand}, #{browsingDate})")
+    void saveBrandBrowsingHistory(BrandBrowsingHistory bbh);
+
+    @Insert("insert into carBrowsingHistory (`userId`, `carId`, `browsingDate`) " +
+            "values (#{userId}, #{carId}, #{browsingDate})")
+    void saveCarBrowsingHistory(CarBrowsingHistory cbh);
 }

@@ -69,6 +69,11 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
     private void executeBrandUpdate(String type, int userId, String brand) {
         UserBrand userBrand = personallizMapper.getUserBrand(userId, type);
         Car car = carMapper.getCarsByBrandNew(brand);
+
+        // 插入品牌浏览记录
+        BrandBrowsingHistory bbh = new BrandBrowsingHistory(userId, car.getId(), brand, new Date());
+        personallizMapper.saveBrandBrowsingHistory(bbh);
+
         if (userBrand == null) {
             Map<Integer, Integer> content = new HashMap<>();
             content.put(car.getId(), 1);
@@ -91,7 +96,6 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
             userBrand.setContent(JSON.toJSONString(content));
             personallizMapper.updateUserBrand(userBrand);
         }
-        // TODO 更新该品牌的热度
 
     }
 
@@ -105,6 +109,10 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
     private void executeUserCarsUpdate(String type, int userId, int carId) {
         Car parentCar = carMapper.getParentByChildId(carId);
         executeBrandUpdate(type, userId, parentCar.getBrand());
+        // 插入汽车浏览记录
+        CarBrowsingHistory cbh = new CarBrowsingHistory(userId, carId, new Date());
+        personallizMapper.saveCarBrowsingHistory(cbh);
+
         UserCar userCar = personallizMapper.getUserCar(userId, type, parentCar.getId());
         if (userCar == null) {
             Map<Integer, Integer> content = new HashMap<>();
