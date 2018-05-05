@@ -1,7 +1,11 @@
 package com.kaolashopping.kaola.service;
 
 
+import com.kaolashopping.kaola.bean.Car;
 import com.kaolashopping.kaola.bean.User;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author ming.zhong
@@ -16,4 +20,16 @@ public interface UserService {
     boolean addUser(User user);
 
     boolean checkUser(String userName);
+
+    List<Car> getLatestCar();
+
+    List<String> getLatestBrands();
+
+    Map<String,List<String>> getPersonFeatures();
+
+    List<String> getChracters();
+
+    List<Car> getMostViewCars();
+
+    List<String> getMostViewBrands();
 }

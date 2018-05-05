@@ -112,31 +112,6 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     /**
-     * 获取所有的有评分的车辆，带缓存
-     *
-     * @return
-     */
-    @Override
-    public Map<Integer, Car> getAllCars() {
-        String carsMap = redisUtils.get(allCars);
-        Map<Integer, Car> map;
-        if (carsMap == null) {
-            List<Car> cars = carMapper.getAllMidCar();
-            map = new HashMap<>();
-            for (Car car : cars) {
-                if (car.getId() >= 0 && !car.getType().equals("")) {
-                    map.put(car.getId(), car);
-                }
-            }
-            redisUtils.add(allCars, JSON.toJSONString(map));
-        } else {
-            map = JSON.parseObject(carsMap, new TypeReference<HashMap<Integer, Car>>() {
-            });
-        }
-        return map;
-    }
-
-    /**
      * 通过simIds获取所有的car，该情况下获取的car定位于目标车辆相同
      *
      * @param simIds

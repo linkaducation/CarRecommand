@@ -2,16 +2,19 @@ package com.kaolashopping.kaola.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.kaolashopping.kaola.bean.Car;
 import com.kaolashopping.kaola.bean.User;
 import com.kaolashopping.kaola.redis.RedisUtils;
 import com.kaolashopping.kaola.service.UserService;
-import com.kaolashopping.kaola.utils.CommonUtils;
 import com.kaolashopping.kaola.utils.CookieUtils;
 import com.kaolashopping.kaola.utils.LocalUser;
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
@@ -24,6 +27,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -99,7 +104,7 @@ public class UserController {
 
     @PostMapping("/doregister")
     public String register(HttpServletRequest request, HttpServletResponse response, User user,
-                                   @RequestParam("vrifyCode") String vrifyCode) {
+                           @RequestParam("vrifyCode") String vrifyCode) {
         String redisKey = request.getRemoteAddr();
         String captchaId = redisUtils.get(redisKey);
         if (captchaId == null || !captchaId.equals(vrifyCode)) {
@@ -141,5 +146,28 @@ public class UserController {
             return "false";
         }
         return "true";
+    }
+
+    @GetMapping("/user/center")
+    public ModelAndView personalCenter() {
+        // car浏览记录
+        List<Car> latestCars = userService.getLatestCar();
+
+        // 浏览最多的car
+        List<Car> mostViewCars = userService.getMostViewCars();
+
+        // brand浏览历史
+        List<String> brands = userService.getLatestBrands();
+
+        // 浏览最多的品牌
+        List<String> mostViewsBrand = userService.getMostViewBrands();
+
+        // 性格分析
+        Map<String, List<String>> features = userService.getPersonFeatures();
+
+        // 我最在意的点
+        List<String> characters = userService.getChracters();
+
+        return null;
     }
 }

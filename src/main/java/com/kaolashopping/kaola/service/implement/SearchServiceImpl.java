@@ -9,7 +9,6 @@ import com.kaolashopping.kaola.bean.TouristUser;
 import com.kaolashopping.kaola.mapper.CarMapper;
 import com.kaolashopping.kaola.mapper.PersonallizMapper;
 import com.kaolashopping.kaola.mapper.SearchMapper;
-import com.kaolashopping.kaola.service.ProductsService;
 import com.kaolashopping.kaola.service.SearchService;
 import com.kaolashopping.kaola.utils.CommonUtils;
 import com.kaolashopping.kaola.utils.LocalUser;
@@ -26,9 +25,6 @@ public class SearchServiceImpl implements SearchService {
 
     @Autowired
     private SearchMapper searchMapper;
-
-    @Autowired
-    private ProductsService productsService;
 
     @Autowired
     private CarMapper carMapper;
@@ -82,7 +78,7 @@ public class SearchServiceImpl implements SearchService {
         int type = Integer.parseInt(searchCondition.remove("type"));
         String carType = CommonUtils.carType.get(type);
 
-        Map<Integer, Car> allCars = productsService.getAllCars();
+        Map<Integer, Car> allCars = CommonUtils.allCars;
         Map<String, Float> tarMap = new HashMap<>(searchCondition.size());
         for (String s : searchCondition.keySet()) {
             tarMap.put(s, Float.parseFloat(searchCondition.get(s)));

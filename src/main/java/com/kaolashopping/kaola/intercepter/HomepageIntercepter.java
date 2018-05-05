@@ -18,7 +18,7 @@ public class HomepageIntercepter implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         User user = LocalUser.getUser();
-        if (user == null) {
+        if (user != null) {
             return true;
         }
         response.sendRedirect("/homepage");

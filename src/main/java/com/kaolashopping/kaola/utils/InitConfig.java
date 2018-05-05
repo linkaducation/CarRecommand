@@ -1,12 +1,19 @@
 package com.kaolashopping.kaola.utils;
 
+import com.kaolashopping.kaola.bean.Car;
+import com.kaolashopping.kaola.mapper.CarMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class InitConfig implements CommandLineRunner {
+
+    @Autowired
+    private CarMapper carMapper;
 
     @Override
     public void run(String... strings) throws Exception {
@@ -40,5 +47,12 @@ public class InitConfig implements CommandLineRunner {
         CommonUtils.carType.put(12, "MPV");
         CommonUtils.carType.put(13, "跑车");
         CommonUtils.carType.put(14, null);
+
+        List<Car> cars = carMapper.getAllMidCar();
+        for (Car car : cars) {
+            if (car.getId() >= 0 && !car.getType().equals("")) {
+                CommonUtils.allCars.put(car.getId(), car);
+            }
+        }
     }
 }

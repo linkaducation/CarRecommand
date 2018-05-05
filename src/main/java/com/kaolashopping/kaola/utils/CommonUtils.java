@@ -1,6 +1,7 @@
 package com.kaolashopping.kaola.utils;
 
 
+import com.kaolashopping.kaola.bean.Car;
 import com.kaolashopping.kaola.bean.User;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -22,6 +23,8 @@ public class CommonUtils {
     public static String getPassword(String password) {
         return DigestUtils.md5Hex(password);
     }
+
+    public final static Map<Integer, Car> allCars = new HashMap<>();
 
     public static String getOrderId() {
         User user = LocalUser.getUser();

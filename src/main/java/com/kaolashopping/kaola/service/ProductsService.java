@@ -32,8 +32,6 @@ public interface ProductsService {
 
     Set<String> getConfigSetByIds(String ids);
 
-    Map<Integer, Car> getAllCars();
-
     List<Car> getSimCarsByIds(String simIds);
 
     List<Car> getOtherSimCarsByIds(String otherSimIds);

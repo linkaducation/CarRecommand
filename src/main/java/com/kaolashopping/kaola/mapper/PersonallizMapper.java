@@ -52,4 +52,24 @@ public interface PersonallizMapper {
 
     @Update("update hotCarForBrowsing set content = #{content} where userId = #{userId} and type = #{type}")
     void updateHotCarForBrowsing(HotCarForBrowsing hotCarForBrowsing);
+
+    @Update("update carBrowsingHistory set deleted = 1 where userId = #{userId} and carId = #{carId}")
+    void DeleteCarBrowsingHistory(@Param("userId") int userId, @Param("carId") int carId);
+
+    @Update("update brandBrowsingHistory set deleted = 1 where userId = #{userId} and brand = #{brand}")
+    void DeleteBrandBrowsingHistory(@Param("userId") int userId, @Param("brand") String brand);
+
+    @Select("select * from carBrowsingHistory where userId = #{userId} and deleted = 0 " +
+            "order by browsingDate desc limit 10")
+    List<CarBrowsingHistory> getLatestCarBrowsing(@Param("userId") int userId);
+
+    @Select("select count(*) as id, carId from carBrowsingHistory where userId = #{userId} group by carId order by id desc limit 10")
+    List<CarBrowsingHistory> getMostViewCars(@Param("userId") int userId);
+
+    @Select("select * from brandBrowsingHistory where userId = #{userId} and deleted = 0 order by browsingDate desc limit 5")
+    List<BrandBrowsingHistory> getLatestBrands(@Param("userId") int userId);
+
+    @Select("select count(*) as id, brand from brandBrowsingHistory where userId = #{userId} " +
+            "group by brand order by id desc limit 5")
+    List<BrandBrowsingHistory> getMostViewBrands(@Param("userId") int userId);
 }
