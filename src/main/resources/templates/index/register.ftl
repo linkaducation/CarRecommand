@@ -119,10 +119,10 @@
 <body>
 <nav class="top ">
     <div class="top_middle">
-        <a href="/homepage">
-            考拉首页
+        <a href="/">
+            车库首页
         </a>
-        <span>喵，欢迎来考拉</span>
+        <span>喵，欢迎来到Allen的车库</span>
         <a href="login">请登录</a>
         <a href="register">免费注册</a>
     </div>
@@ -181,7 +181,7 @@
                 dataType: "json",
                 success: function(result) {
                     if (result) {
-                        window.location.href="/homepage"
+                        window.location.href="/"
                     } else {
                         $("span.errorMessage").html("注册失败，请联系管理员");
                         $("div.registerErrorMessageDiv").css("visibility","visible");

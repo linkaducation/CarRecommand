@@ -29,7 +29,7 @@ public class AdmnIntercepter implements HandlerInterceptor{
             }
         }
         PrintWriter writer = response.getWriter();
-        writer.append("access deny");
+        writer.append("无权限访问");
         return false;
     }
 

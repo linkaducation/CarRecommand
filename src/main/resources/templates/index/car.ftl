@@ -10,7 +10,7 @@
 <nav class="top ">
     <div class="top_middle">
 
-        <a href="/homepage">
+        <a href="/">
             车库首页
         </a>
     <#if user??>

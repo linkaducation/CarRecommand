@@ -55,7 +55,7 @@ function checkEmpty(id, name){
 <body>
 <nav class="top ">
     <div class="top_middle">
-        <a href="/homepage">
+        <a href="/">
             车库首页
         </a>
         <span>喵，欢迎来车库</span>
@@ -123,12 +123,12 @@ $(function(){
 				</span>
 				<input id="password" name="password" type="password" placeholder="密码" type="text">
 			</div>
-			<span class="text-danger">不要输入真实的车库账号密码</span><br><br>
-			
+
 			
 			<div>
 				<a href="register" class="pull-right">免费注册</a>
 			</div>
+			<br>
 			<div style="margin-top:20px">
 				<button class="btn btn-block redButton" onclick="submit()">登录</button>
 			</div>
@@ -148,7 +148,7 @@ $(function(){
             } else {
                 var redirctUri = getUrlParam("redirect");
                 if (0 === redirctUri.length) {
-                    locationHref = "/homepage";
+                    locationHref = "/";
                 } else {
                     locationHref = redirctUri;
                 }
