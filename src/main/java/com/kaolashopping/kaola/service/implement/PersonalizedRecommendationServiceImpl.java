@@ -9,6 +9,7 @@ import com.kaolashopping.kaola.mapper.PersonallizMapper;
 import com.kaolashopping.kaola.mapper.SearchMapper;
 import com.kaolashopping.kaola.service.PersonalizedRecommendationService;
 import com.kaolashopping.kaola.service.ProductsService;
+import com.kaolashopping.kaola.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -75,7 +76,8 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
         Car car = carMapper.getCarsByBrandNew(brand);
 
         // 插入品牌浏览记录
-        BrandBrowsingHistory bbh = new BrandBrowsingHistory(userId, car.getId(), brand, new Date());
+        personallizMapper.DeleteBrandBrowsingHistory(userId, brand);
+        BrandBrowsingHistory bbh = new BrandBrowsingHistory(userId, car.getId(), brand, new Date(), false);
         personallizMapper.saveBrandBrowsingHistory(bbh);
 
         if (userBrand == null) {
@@ -114,7 +116,8 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
         Car parentCar = carMapper.getParentByChildId(carId);
         executeBrandUpdate(type, userId, parentCar.getBrand());
         // 插入汽车浏览记录
-        CarBrowsingHistory cbh = new CarBrowsingHistory(userId, carId, new Date());
+        personallizMapper.DeleteCarBrowsingHistory(userId, carId);
+        CarBrowsingHistory cbh = new CarBrowsingHistory(userId, carId, new Date(), false);
         personallizMapper.saveCarBrowsingHistory(cbh);
 
         UserCar userCar = personallizMapper.getUserCar(userId, type, parentCar.getId());
@@ -296,7 +299,7 @@ public class PersonalizedRecommendationServiceImpl implements PersonalizedRecomm
      * @return
      */
     private List<Car> doGetHotCars(int userId) {
-        Map<Integer, Car> allCars = productsService.getAllCars();
+        Map<Integer, Car> allCars = CommonUtils.allCars;
         HotCar hotCar = searchMapper.getHotCarByUser(userId);
         List<Car> res = new ArrayList<>(10);
         if (hotCar != null) {

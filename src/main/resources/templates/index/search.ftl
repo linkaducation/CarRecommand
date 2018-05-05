@@ -19,7 +19,11 @@
         </a>
     <#if user??>
         <span>${user.nickName}，欢迎来到Allen的车库</span>
-    <#else >
+        <span class="pull-right">
+			<a href="/user/center">个人中心</a>
+            <a href="/user/logout">退出登录</a>
+		</span>
+    <#else>
         <span>喵，欢迎来到Allen的车库</span>
         <a href="/user/login">请登录</a>
         <a href="/user/register">免费注册</a>
@@ -28,7 +32,7 @@
     </div>
 </nav>
 
-<title>Allen的车库</title>
+<title>搜索结果</title>
 
 
 <div class="homepageDiv">
@@ -472,7 +476,7 @@
         <div class="eachHomepageCategoryProducts">
             <div class="eachHomepageCategoryProducts">
                 <div class="left-mark"></div>
-                <#--<span class="categoryTitle"></span>-->
+                <span class="categoryTitle">筛选结果</span>
                 <br>
                 <#list simCars as car>
                 <#--核心div，展示商品-->

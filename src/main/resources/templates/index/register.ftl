@@ -125,14 +125,10 @@
         <span>喵，欢迎来考拉</span>
         <a href="login">请登录</a>
         <a href="register">免费注册</a>
-        <span class="pull-right">
-			<a href="/account/order">我的订单</a>
-                            <a href="/account/cart">
-			购物车<strong>0</strong>件</a>
-		</span>
     </div>
 </nav>
 
+<title>注册</title>
 
 <script>
     $(function(){

@@ -11,14 +11,24 @@ public class CarBrowsingHistory {
     private int userId;
     private int carId;
     private Date browsingDate;
+    private boolean deleted;
 
     public CarBrowsingHistory() {
     }
 
-    public CarBrowsingHistory(int userId, int carId, Date browsingDate) {
+    public CarBrowsingHistory(int userId, int carId, Date browsingDate, boolean deleted) {
         this.userId = userId;
         this.carId = carId;
         this.browsingDate = browsingDate;
+        this.deleted = deleted;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     public int getId() {
