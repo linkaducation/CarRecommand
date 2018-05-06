@@ -48,6 +48,16 @@ public class InitConfig implements CommandLineRunner {
         CommonUtils.carType.put(13, "跑车");
         CommonUtils.carType.put(14, null);
 
+        CommonUtils.characterMap.put("fuelConsumption", "油耗");
+        CommonUtils.characterMap.put("control", "操控");
+        CommonUtils.characterMap.put("costPerformance", "性价比");
+        CommonUtils.characterMap.put("power", "动力");
+        CommonUtils.characterMap.put("configure", "配置");
+        CommonUtils.characterMap.put("comfortable", "舒适");
+        CommonUtils.characterMap.put("space", "空间");
+        CommonUtils.characterMap.put("appearance", "外观");
+        CommonUtils.characterMap.put("interior", "内饰");
+
         List<Car> cars = carMapper.getAllMidCar();
         for (Car car : cars) {
             if (car.getId() >= 0 && !car.getType().equals("")) {

@@ -60,10 +60,10 @@ public interface PersonallizMapper {
     void DeleteBrandBrowsingHistory(@Param("userId") int userId, @Param("brand") String brand);
 
     @Select("select * from carBrowsingHistory where userId = #{userId} and deleted = 0 " +
-            "order by browsingDate desc limit 10")
+            "order by browsingDate desc limit 20")
     List<CarBrowsingHistory> getLatestCarBrowsing(@Param("userId") int userId);
 
-    @Select("select count(*) as id, carId from carBrowsingHistory where userId = #{userId} group by carId order by id desc limit 10")
+    @Select("select count(*) as id, carId from carBrowsingHistory where userId = #{userId} group by carId order by id desc limit 20")
     List<CarBrowsingHistory> getMostViewCars(@Param("userId") int userId);
 
     @Select("select * from brandBrowsingHistory where userId = #{userId} and deleted = 0 order by browsingDate desc limit 5")

@@ -113,12 +113,7 @@ public class UserServiceImpl implements UserService {
         if (carBrowsingHistories == null || carBrowsingHistories.isEmpty()) {
             return null;
         }
-        Map<Integer, Car> allCars = CommonUtils.allCars;
-        List<Car> res = new ArrayList<>(carBrowsingHistories.size());
-        for (CarBrowsingHistory history : carBrowsingHistories) {
-            res.add(allCars.get(history.getCarId()));
-        }
-        return res;
+        return getTop10Car(carBrowsingHistories);
     }
 
     /**
@@ -133,10 +128,23 @@ public class UserServiceImpl implements UserService {
         if (mostViewCars == null || mostViewCars.isEmpty()) {
             return null;
         }
+        return getTop10Car(mostViewCars);
+    }
+
+    /**
+     * 将CarBrowsingHistory转化为car
+     *
+     * @param cars
+     * @return
+     */
+    private List<Car> getTop10Car(List<CarBrowsingHistory> cars) {
         Map<Integer, Car> allCars = CommonUtils.allCars;
-        List<Car> res = new ArrayList<>(mostViewCars.size());
-        for (CarBrowsingHistory viewCar : mostViewCars) {
-            res.add(allCars.get(viewCar.getCarId()));
+        List<Car> res = new ArrayList<>(cars.size());
+        for (CarBrowsingHistory viewCar : cars) {
+            Car car = allCars.get(viewCar.getCarId());
+            if (car != null) {
+                res.add(car);
+            }
         }
         return res;
     }
@@ -260,7 +268,7 @@ public class UserServiceImpl implements UserService {
         for (int i = 0; i < 3 && i < list.size(); i++) {
             res.add(list.get(i).getKey());
         }
-        return res;
+        return transformEnToCn(res);
     }
 
     /**
@@ -327,6 +335,20 @@ public class UserServiceImpl implements UserService {
             if (limit++ >= 5) {
                 break;
             }
+        }
+        return res;
+    }
+
+    /**
+     * 将标签由英文转化为中文
+     *
+     * @param chracters
+     * @return
+     */
+    private List<String> transformEnToCn(List<String> chracters) {
+        List<String> res = new ArrayList<>(3);
+        for (String chracter : chracters) {
+            res.add(CommonUtils.characterMap.get(chracter));
         }
         return res;
     }

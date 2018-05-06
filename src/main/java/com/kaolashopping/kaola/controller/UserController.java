@@ -177,11 +177,21 @@ public class UserController {
 
         // 获取我最在意的优点和我最不在乎的缺点
         Map<String, List<String>> features = userService.getPersonFeatures();
+        List<String> advantage = features.get("advantage");
+        List<String> disadvantage = features.get("disadvantage");
 
         // 获取个人最在意的车辆的三个特征
         List<String> characters = userService.getChracters();
 
         ModelAndView mav = new ModelAndView("userCenter");
+        mav.addObject("characters", characters);
+        mav.addObject("advantage", advantage);
+        mav.addObject("disadvantage", disadvantage);
+        mav.addObject("mostViewsBrand", mostViewsBrand);
+        mav.addObject("mostViewCars", mostViewCars);
+        mav.addObject("brands", brands);
+        mav.addObject("latestCars", latestCars);
+        mav.addObject("user", LocalUser.getUser());
         return mav;
     }
 }
