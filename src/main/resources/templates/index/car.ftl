@@ -495,45 +495,9 @@
 </div>
 
 <div id="footer"  class="footer" style="display: block;">
-    <div id="footer_ensure" class="footer_ensure">
-        <a href="/brand/nowhere">
-            <img src="../../ensure.png">
-        </a>
-    </div>
     <div class="horizontal_line">
     </div>
-    <div id="footer_desc" class="footer_desc">
-        <div class="descColumn">
-            <span class="descColumnTitle">购物指南</span>
-            <a href="/brand/nowhere" >免费注册</a>
-        </div>
-        <div class="descColumn">
-            <span class="descColumnTitle">车库保障</span>
-            <a href="/brand/nowhere" >发票保障</a>
-            <a href="/brand/nowhere" >售后规则</a>
-            <a href="/brand/nowhere" >缺货赔付</a>
-        </div>
-        <div class="descColumn">
-            <span class="descColumnTitle">支付方式</span>
-            <a href="/brand/nowhere" >快捷支付</a>
-            <a href="/brand/nowhere" >信用卡</a>
-            <a href="/brand/nowhere" >货到付款</a>
-        </div>
-        <div class="descColumn">
-            <span class="descColumnTitle">商家服务</span>
-            <a href="/brand/nowhere" >商家入驻</a>
-            <a href="/brand/nowhere" >商家中心</a>
-            <a href="/brand/nowhere" >车库智库</a>
-            <a href="/brand/nowhere" >车库规则</a>
-            <a href="/brand/nowhere" >物流服务</a>
-            <a href="/brand/nowhere" >喵言喵语</a>
-            <a href="/brand/nowhere" >运营服务</a>
-        </div>
-        <div class="descColumn">
-            <span class="descColumnTitle">手机车库</span>
-            <a href="/brand/nowhere" ><img src="../../ma.png"></a>
-        </div>
-    </div>
+
     <div style="clear:both"></div>
     <div id="copyright" class="copyright">
         <div class="coptyrightMiddle">
@@ -566,6 +530,7 @@
     </div>
 </div>
 
+
 <script>
     var navBar = {
         init: function(data) {
@@ -574,11 +539,10 @@
             }
             this.$nav = $("#Jnav");
             this.$JtagA = $("#Jtag a");
-            this.$dPos = $(".dPos"); //所有的品牌锚点
-            this.$iPos = $(".iPos"); //所有的车系锚点
-            this.dPos = []; //品牌锚点高度
-            this.iPos = []; //车系锚点高度
-            // this.data = data; //锚点的data
+            this.$dPos = $(".dPos");
+            this.$iPos = $(".iPos");
+            this.dPos = [];
+            this.iPos = [];
             this.sElement = $("#JbrandElements")[0];
             this.conBool = true;
             this.dPosCss();
@@ -587,10 +551,7 @@
             this.addCurClass();
             this.flag=1;
         },
-        /**
-         * 记录锚点的位置,用于scroll事件
-         * 用来触发添加样式
-         */
+
         dPosCss: function() {
             var _navH = this.$nav.height() + 20;
             //将所有的锚点都向上移
@@ -602,9 +563,7 @@
                 this.iPos.push(this.$iPos.eq(i).offset().top);
             }
         },
-        /*
-        *监听滚动事件 触发动态添加样式
-        */
+
         scroll: function() {
             var self = this;
             $(window).on("scroll.JnavScroll", function() {
@@ -612,15 +571,10 @@
             });
         },
 
-        /*
-        * 其他的事件
-        */
-
         addEvents: function() {
             var self = this,
                     $WINDOW = $(window);
 
-            //展开筛选时,重新获取一次id占位的高度
             $("#ctrlBtn").on("click", function() {
                 self.dPos = [];
                 self.iPos = [];
@@ -638,12 +592,10 @@
             $("#Jnav").on("mouseleave", function() {
                 if ($("#Jnav").hasClass("navFix")) {
                     $("#Jnav").css("height", "36px");
-                    // 离开的时候判断距离 给相应位置的加上cur
                     self.addCurClass();
                 }
             });
 
-            // show tag
             this.showTags(0);
             $("#Jtag a").each(function(i) {
                 $(this).mouseover(function() {
@@ -655,19 +607,7 @@
                 });
             });
         },
-        // showTag 动态添加元素
         showTags: function(num) {
-            /* var _oFragment = document.createDocumentFragment(),
-               _sBrand = this.data[num],
-               l = _sBrand.length;
-             this.sElement.innerHTML = "";
-             for (var i = 0; i < l; i++) {
-               var aBrand = document.createElement("a");
-               aBrand.href = "#" + _sBrand[i].id;
-               aBrand.innerHTML = _sBrand[i].name;
-               _oFragment.appendChild(aBrand);
-             }
-             this.sElement.appendChild(_oFragment);*/
             var dds = this.sElement.getElementsByTagName("dd");
             for (var i = 0; i < dds.length; i++) {
                 dds[i].className = "hide";
