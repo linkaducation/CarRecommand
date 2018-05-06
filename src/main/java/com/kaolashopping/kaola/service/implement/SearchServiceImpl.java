@@ -41,7 +41,6 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<Car> getSimCars(Map<String, String> searchCondition) {
 
-        // 异步更新用户个性化推荐
         Map<String, List<Car>> resMap = doGetSimCars(searchCondition);
         updateUserRecommand(resMap.get("updateData"), LocalUser.getUser().getId());
         return resMap.get("res");
@@ -81,7 +80,7 @@ public class SearchServiceImpl implements SearchService {
         Map<Integer, Car> allCars = CommonUtils.allCars;
         Map<String, Float> tarMap = new HashMap<>(searchCondition.size());
         for (String s : searchCondition.keySet()) {
-            tarMap.put(s, Float.parseFloat(searchCondition.get(s)));
+            tarMap.put(s, Float.parseFloat(searchCondition.get(s)) / 5 + 4);
         }
 
         Comparator<EvaluateIdNode> comparator = (o1, o2) -> {
