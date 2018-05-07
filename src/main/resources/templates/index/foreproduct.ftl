@@ -14,7 +14,7 @@
     <nav class="top ">
         <div class="top_middle">
 
-            <a href="/homepage">
+            <a href="/">
                 车库首页
             </a>
         <#if user??>
@@ -130,7 +130,8 @@
                             },
                             xAxis: {
                                 categories: ['一年', '二年', '三年', '四年', '五年', '六年', '七年', '八年', '九年',
-                                    '十年', '十一年', '十二年', '十三年', '十四年', '十五年', '十六年', '十七年', '十八年', '十九年']
+                                    '十年', '十一年', '十二年', '十三年', '十四年', '十五年', '十六年', '十七年', '十八年',
+                                    '十九年', '二十年', '二十一年', '二十二年', '二十三年', '二十四年', '二十五年']
                             },
                             yAxis: {
                                 title: {
@@ -139,9 +140,9 @@
                             },
                             plotOptions: {
                                 line: {
-                                    dataLabels: {
-                                        enabled: true          // 开启数据标签
-                                    },
+                                    // dataLabels: {
+                                    //     enabled: true          // 开启数据标签
+                                    // },
                                     enableMouseTracking: true // 关闭鼠标跟踪，对应的提示框、点击事件会失效
                                 }
                             },
@@ -235,58 +236,22 @@
     </div>
 
     <div id="footer"  class="footer" style="display: block;">
-        <div id="footer_ensure" class="footer_ensure">
-            <a href="#nowhere">
-                <img src="../../ensure.png">
-            </a>
-        </div>
         <div class="horizontal_line">
         </div>
-        <div id="footer_desc" class="footer_desc">
-            <div class="descColumn">
-                <span class="descColumnTitle">购物指南</span>
-                <a href="#nowhere" >免费注册</a>
-            </div>
-            <div class="descColumn">
-                <span class="descColumnTitle">车库保障</span>
-                <a href="#nowhere" >发票保障</a>
-                <a href="#nowhere" >售后规则</a>
-                <a href="#nowhere" >缺货赔付</a>
-            </div>
-            <div class="descColumn">
-                <span class="descColumnTitle">支付方式</span>
-                <a href="#nowhere" >快捷支付</a>
-                <a href="#nowhere" >信用卡</a>
-                <a href="#nowhere" >货到付款</a>
-            </div>
-            <div class="descColumn">
-                <span class="descColumnTitle">商家服务</span>
-                <a href="#nowhere" >商家入驻</a>
-                <a href="#nowhere" >商家中心</a>
-                <a href="#nowhere" >车库智库</a>
-                <a href="#nowhere" >车库规则</a>
-                <a href="#nowhere" >物流服务</a>
-                <a href="#nowhere" >喵言喵语</a>
-                <a href="#nowhere" >运营服务</a>
-            </div>
-            <div class="descColumn">
-                <span class="descColumnTitle">手机车库</span>
-                <a href="#nowhere" ><img src="../../ma.png"></a>
-            </div>
-        </div>
+
         <div style="clear:both"></div>
         <div id="copyright" class="copyright">
             <div class="coptyrightMiddle">
                 <div class="white_link" >
-                    <a href="#nowhere" style="padding-left:0px" >关于车库</a>
-                    <a href="#nowhere" > 帮助中心</a>
-                    <a href="#nowhere" >开放平台</a>
-                    <a href="#nowhere" >  诚聘英才</a>
-                    <a href="#nowhere" >联系我们</a>
-                    <a href="#nowhere" >网站合作</a>
-                    <a href="#nowhere" >法律声明</a>
-                    <a href="#nowhere" >知识产权</a>
-                    <a href="#nowhere" >  廉正举报	</a>
+                    <a href="/brand/nowhere" style="padding-left:0px" >关于车库</a>
+                    <a href="/brand/nowhere" > 帮助中心</a>
+                    <a href="/brand/nowhere" >开放平台</a>
+                    <a href="/brand/nowhere" >  诚聘英才</a>
+                    <a href="/brand/nowhere" >联系我们</a>
+                    <a href="/brand/nowhere" >网站合作</a>
+                    <a href="/brand/nowhere" >法律声明</a>
+                    <a href="/brand/nowhere" >知识产权</a>
+                    <a href="/brand/nowhere" >  廉正举报	</a>
                 </div>
                 <div class="white_link" >
                 </div>
@@ -305,5 +270,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

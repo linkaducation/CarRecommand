@@ -16,9 +16,11 @@ import java.util.Map;
  */
 public class CommonUtils {
 
-    public static Map<String, List<String>> carModelConfig = new HashMap<>();
+    public static Map<String, List<String>> carModelConfig = new HashMap<>(16);
 
-    public static Map<Integer, String> carType = new HashMap<>();
+    public static Map<Integer, String> carType = new HashMap<>(16);
+
+    public static Map<String, String> characterMap = new HashMap<>(9);
 
     public static String getPassword(String password) {
         return DigestUtils.md5Hex(password);

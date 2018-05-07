@@ -44,7 +44,7 @@ public class ProductsController {
     @Autowired
     private RedisUtils redisUtils;
 
-    @GetMapping(value = {"/homepage", "/"})
+    @GetMapping(value = {"/index", "/"})
     public ModelAndView homepage(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView("homepage");
         User user = LocalUser.getUser();

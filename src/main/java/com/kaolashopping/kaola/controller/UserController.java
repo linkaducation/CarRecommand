@@ -163,25 +163,27 @@ public class UserController {
 
     @GetMapping("/user/center")
     public ModelAndView personalCenter() {
-        // car的最近浏览记录
         List<Car> latestCars = userService.getLatestCar();
-
-        // 浏览最多的car
         List<Car> mostViewCars = userService.getMostViewCars();
-
-        // brand的最近浏览历史
         List<String> brands = userService.getLatestBrands();
-
-        // 浏览最多的品牌
         List<String> mostViewsBrand = userService.getMostViewBrands();
-
-        // 获取我最在意的优点和我最不在乎的缺点
         Map<String, List<String>> features = userService.getPersonFeatures();
-
-        // 获取个人最在意的车辆的三个特征
+        List<String> advantage = null;
+        List<String> disadvantage = null;
+        if (features != null && !features.isEmpty()) {
+            advantage = features.get("advantage");
+            disadvantage = features.get("disadvantage");
+        }
         List<String> characters = userService.getChracters();
-
         ModelAndView mav = new ModelAndView("userCenter");
+        mav.addObject("characters", characters);
+        mav.addObject("advantage", advantage);
+        mav.addObject("disadvantage", disadvantage);
+        mav.addObject("mostViewsBrand", mostViewsBrand);
+        mav.addObject("mostViewCars", mostViewCars);
+        mav.addObject("brands", brands);
+        mav.addObject("latestCars", latestCars);
+        mav.addObject("user", LocalUser.getUser());
         return mav;
     }
 }

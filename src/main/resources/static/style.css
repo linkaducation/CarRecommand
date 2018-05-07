@@ -458,12 +458,22 @@ div.loginDivInProductPage {
 }
 
 div.loginSmallDiv {
-	background-color: white;
+	background-color: #f3f0ea75;
 	position: absolute;
 	right: 180px;
-	top: 180px;
+	top: 50px;
 	width: 350px;
 	height: 400px;
+	padding: 60px 25px 80px 25px;
+}
+
+div.loginSmallDiv2 {
+	background-color: #f3f0ea75;
+	position: absolute;
+	right: 120px;
+	top: 50px;
+	width: 430px;
+	height: 480px;
 	padding: 60px 25px 80px 25px;
 }
 
@@ -2149,6 +2159,13 @@ table.registerTable {
 	font-size: 16px;
 	table-layout: fixed;
 	margin-top: 50px;
+	background-color: #f3f0ea00;
+	position: absolute;
+	right: 340px;
+	top: 0px;
+	width: 300px;
+	height: 400px;
+	padding: 60px 25px 80px 25px;
 }
 
 table.registerTable td {
@@ -2186,7 +2203,7 @@ table.registerTable button {
 	height: 36px;
 	border-radius: 2px;
 	color: white;
-	background-color: #C40000;
+	background-color: rgba(196, 0, 0, 0);
 	border-width: 0px;
 }
 
@@ -2230,10 +2247,13 @@ div.reviewStasticsDiv {
 }
 
 div.registerErrorMessageDiv {
-	width: 600px;
+	width: 400px;
 	margin: 0px auto;
-	height: 50px;
+	height: 30px;
 	visibility: hidden;
+	position: absolute;
+	top: -53px;
+	padding: 60px 25px 0px 5px;
 }
 
 td.orderItemProductInfoPartTD {
