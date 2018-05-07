@@ -21,6 +21,7 @@
         <span>${user.nickName}，欢迎来到Allen的车库</span>
         <span class="pull-right">
 			<a href="/user/center">个人中心</a>
+            <a href="/user/logout">退出登录</a>
 		</span>
     <#else >
         <span>喵，欢迎来到Allen的车库</span>

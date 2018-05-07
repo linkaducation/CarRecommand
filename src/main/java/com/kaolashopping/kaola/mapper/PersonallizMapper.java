@@ -37,8 +37,8 @@ public interface PersonallizMapper {
             "values (#{userId}, #{brandId}, #{brand}, #{browsingDate})")
     void saveBrandBrowsingHistory(BrandBrowsingHistory bbh);
 
-    @Insert("insert into carBrowsingHistory (`userId`, `carId`, `browsingDate`) " +
-            "values (#{userId}, #{carId}, #{browsingDate})")
+    @Insert("insert into carBrowsingHistory (`userId`, `carId`, `browsingDate`, `deleted`) " +
+            "values (#{userId}, #{carId}, #{browsingDate}, #{deleted})")
     void saveCarBrowsingHistory(CarBrowsingHistory cbh);
 
     @Select("select * from userCar where userId = #{userId} and type = #{type}")
